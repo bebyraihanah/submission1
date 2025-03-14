@@ -9,7 +9,7 @@ sns.set(style='dark')
 # Load dataset
 @st.cache_data
 def load_data():
-    df = pd.read_csv(os.path.join(os.path.dirname(__file__),"all_data.csv"), parse_dates=["order_purchase_timestamp"])
+    df = pd.read_csv(os.path.join(os.path.dirname(),"all_data.csv"), parse_dates=["order_purchase_timestamp"])
     df.rename(columns={"order_purchase_timestamp": "order_date"}, inplace=True)
     return df
 
