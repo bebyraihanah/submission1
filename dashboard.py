@@ -6,13 +6,21 @@ from babel.numbers import format_currency
 sns.set(style='dark')
 
 
-# Load dataset
-@st.cache_data
 def load_data():
-    df = pd.read_csv(os.path.join(os.path.dirname(),"all_data.csv"), parse_dates=["order_purchase_timestamp"])
-    df.rename(columns={"order_purchase_timestamp": "order_date"}, inplace=True)
-    return df
+    # Dapatkan path direktori kerja saat ini
+    current_dir = os.getcwd()  
 
+    # Tentukan path file CSV
+    file_path = os.path.join(current_dir, "all_data.csv")
+
+    # Cek apakah file ada sebelum membaca
+    if not os.path.exists(file_path):
+        raise FileNotFoundError(f"File {file_path} tidak ditemukan di {current_dir}.")
+
+    # Load CSV
+    return pd.read_csv(file_path, parse_dates=["order_purchase_timestamp"])
+
+# Load data
 df = load_data()
 
 df.sort_values(by="order_date", inplace=True)
