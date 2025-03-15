@@ -13,8 +13,8 @@ def load_data():
     file_path = "DASHBOARD/all_data.csv"
 
     # Cek apakah file ada sebelum membaca
-    if not os.path.exists(file_path):
-        raise FileNotFoundError(f"File tidak ditemukan di {file_path}.")
+    # if not os.path.exists(file_path):
+    #     raise FileNotFoundError(f"File tidak ditemukan di {file_path}.")
 
     # Load CSV
     return pd.read_csv(file_path, parse_dates=["order_purchase_timestamp"]) 
