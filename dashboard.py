@@ -7,17 +7,7 @@ from babel.numbers import format_currency
 sns.set(style='dark')
 
 
-def load_data():
-    
-    # Tentukan path file CSV
-    file_path = "DASHBOARD/all_data.csv"
-
-    # Cek apakah file ada sebelum membaca
-    # if not os.path.exists(file_path):
-    #     raise FileNotFoundError(f"File tidak ditemukan di {file_path}.")
-
-    # Load CSV
-    return pd.read_csv(file_path, parse_dates=["order_purchase_timestamp"]) 
+df = pd.read_csv("all_data.csv", parse_dates=["order_purchase_timestamp"])
 
 # Load data
 df = load_data()
