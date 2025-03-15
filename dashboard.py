@@ -9,10 +9,10 @@ sns.set(style='dark')
 
 def load_data():
     # Dapatkan path direktori kerja saat ini
-    current_dir = os.getcwd()  
+    current_dir = os.getcwd()
 
     # Tentukan path file CSV
-    file_path = os.path.join(current_dir, "all_data.csv")
+    file_path = os.path.join(current_dir, "DASHBOARD/all_data.csv")
 
     # Cek apakah file ada sebelum membaca
     if not os.path.exists(file_path):
