@@ -9,17 +9,17 @@ sns.set(style='dark')
 
 def load_data():
     # Dapatkan path direktori kerja saat ini
-    current_dir = os.getcwd()
+    data_dir = "DASHBOARD"
 
     # Tentukan path file CSV
-    file_path = os.path.join(current_dir, "DASHBOARD/all_data.csv")
+    file_path = os.path.join(data_dir, "all_data.csv")
 
     # Cek apakah file ada sebelum membaca
     if not os.path.exists(file_path):
-        raise FileNotFoundError(f"File {file_path} tidak ditemukan di {current_dir}.")
+        raise FileNotFoundError(f"File {data_dir} tidak ditemukan di {file_path}.")
 
     # Load CSV
-    return pd.read_csv(file_path, parse_dates=["order_purchase_timestamp"])
+    return pd.read_csv(file_path, parse_dates=["order_purchase_timestamp"]) 
 
 # Load data
 df = load_data()
